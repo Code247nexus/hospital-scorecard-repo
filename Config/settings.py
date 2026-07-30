@@ -19,13 +19,12 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 ALLOWED_HOSTS = (
     ["localhost", "127.0.0.1"]
     if DEBUG
-    else ["hospital-scorecard-edwb.onrender.com"]
+    else ["https://hospital-scorecard-repo.onrender.com"]
 )
 
-CSRF_TRUSTED_ORIGINS = os.getenv(
-    "CSRF_TRUSTED_ORIGINS",
-    "http://localhost"
-).split(",")
+CSRF_TRUSTED_ORIGINS = [
+    "https://hospital-scorecard-repo.onrender.com",
+]
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
