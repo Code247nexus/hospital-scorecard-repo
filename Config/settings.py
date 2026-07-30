@@ -27,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gv-s-rpgnwxc9)ie*4no4@p!%&^*+81($$9r0nhf1b*3w(6yj('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 
 
 # Application definition
@@ -83,8 +83,11 @@ DATABASES = {
         'NAME': os.getenv('DB_NAME'),
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST', 'localhost'),
-        'PORT': '3306',
+        'HOST': os.getenv('DB_HOST'),
+        'PORT':  os.getenv('DB_PORT', '3306'),
+        'OPTIONS':{
+            'ssl':{'ssl-mode':'REQUIRED'}
+        }
     }
 }
 
