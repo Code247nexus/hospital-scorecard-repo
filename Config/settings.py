@@ -22,9 +22,10 @@ ALLOWED_HOSTS = (
     else ["hospital-scorecard-edwb.onrender.com"]
 )
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://hospital-scorecard-edwb.onrender.com",
-]
+CSRF_TRUSTED_ORIGINS = os.getenv(
+    "CSRF_TRUSTED_ORIGINS",
+    "http://localhost"
+).split(",")
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
