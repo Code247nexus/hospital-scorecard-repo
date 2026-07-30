@@ -16,11 +16,11 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["*"] if DEBUG else [
-    "hospital-scorecard-edwb.onrender.com",
-    "localhost",
-    "127.0.0.1",
-]
+ALLOWED_HOSTS = (
+    ["localhost", "127.0.0.1"]
+    if DEBUG
+    else ["hospital-scorecard-edwb.onrender.com"]
+)
 
 CSRF_TRUSTED_ORIGINS = [
     "https://hospital-scorecard-edwb.onrender.com",
