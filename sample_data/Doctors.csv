@@ -1,0 +1,41 @@
+doctor_id,name,department,specialization,years_experience
+1,Matthew Rana,Neurology,Stroke Specialist,26
+2,Elijah Wason,Pediatrics,Pediatrician,5
+3,Jasmit Bhardwaj,Emergency,Trauma Specialist,7
+4,Baljiwan Chadha,Neurology,Epilepsy Specialist,4
+5,Omya Boase,Oncology,Medical Oncologist,3
+6,Gautam Samra,Cardiology,Electrophysiologist,27
+7,Jatin Kapoor,Cardiology,Interventional Cardiologist,6
+8,Mekhala Bawa,Oncology,Radiation Oncologist,4
+9,Chakradhar Deol,Emergency,Trauma Specialist,8
+10,Oni Dhawan,Orthopedics,Sports Medicine,4
+11,Darika Golla,Oncology,Surgical Oncologist,26
+12,Raghav Pradhan,Cardiology,Interventional Cardiologist,3
+13,Dev Bhasin,Oncology,Medical Oncologist,19
+14,Watika Wali,General Surgery,Laparoscopic Surgeon,35
+15,Dipta Shroff,Cardiology,Heart Failure Specialist,20
+16,Janaki Mistry,Oncology,Surgical Oncologist,12
+17,Pranit Kohli,Cardiology,Heart Failure Specialist,13
+18,Charita Vohra,Neurology,Stroke Specialist,5
+19,Hemal Sen,Oncology,Medical Oncologist,14
+20,Elijah Dalal,General Surgery,Gastro Surgeon,35
+21,Nitesh Oommen,General Surgery,Trauma Surgeon,30
+22,Vrinda Sama,Oncology,Radiation Oncologist,24
+23,Faras Murthy,Neurology,Stroke Specialist,12
+24,Inaya Taneja,Pediatrics,Pediatrician,6
+25,Ekapad Chander,Oncology,Radiation Oncologist,34
+26,Urvi Bhattacharyya,General Surgery,Trauma Surgeon,29
+27,Dayita Sehgal,Neurology,Epilepsy Specialist,5
+28,Libni Palan,Cardiology,Heart Failure Specialist,27
+29,Triya Pant,Orthopedics,Spine Surgeon,10
+30,Jackson Tak,General Surgery,Trauma Surgeon,3
+31,Tejas Mani,Pediatrics,Pediatrician,21
+32,Yug Rao,Neurology,Epilepsy Specialist,23
+33,Watika Buch,Oncology,Radiation Oncologist,30
+34,Saumya Ratti,Cardiology,Interventional Cardiologist,18
+35,Laksh Sani,General Surgery,Gastro Surgeon,5
+36,Ojasvi Parmer,Cardiology,Heart Failure Specialist,20
+37,Vihaan Dora,Pediatrics,Pediatric Intensivist,29
+38,Patrick Dora,Neurology,Epilepsy Specialist,25
+39,Viraj Arora,Pediatrics,Neonatologist,2
+40,Qabil Lall,General Surgery,Trauma Surgeon,11

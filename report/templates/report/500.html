@@ -1,0 +1,22 @@
+{% extends "report/base.html" %}
+
+{% block title %}500 - Server Error{% endblock %}
+
+{% block content %}
+<div class="error-container">
+    <div class="error-card">
+        <div class="error-code">500</div>
+
+        <h2>Something Went Wrong</h2>
+
+        <p>
+            An unexpected error occurred while processing your request.
+            Please try again in a few moments.
+        </p>
+
+        <a href="{% url 'upload_dataset' %}" class="btn-home">
+            ← Back to Home
+        </a>
+    </div>
+</div>
+{% endblock %}

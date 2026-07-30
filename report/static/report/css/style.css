@@ -159,3 +159,59 @@ th {
 main {
     max-width: 700px !important;
 }
+
+/* ===========================
+   Error Pages
+=========================== */
+
+.error-container{
+    min-height:75vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.error-card{
+    max-width:650px;
+    width:100%;
+    background:#ffffff;
+    border-radius:18px;
+    padding:50px;
+    text-align:center;
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+}
+
+.error-code{
+    font-size:90px;
+    font-weight:700;
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.error-card h2{
+    margin-bottom:15px;
+    color:#1f2937;
+}
+
+.error-card p{
+    color:#6b7280;
+    font-size:17px;
+    line-height:1.6;
+    margin-bottom:35px;
+}
+
+.btn-home{
+    display:inline-block;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:12px 28px;
+    border-radius:8px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-home:hover{
+    background:#1d4ed8;
+}

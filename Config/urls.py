@@ -21,3 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('report.urls')),
 ]
+handler404 = "report.views.custom_404"
+handler500 = "report.views.custom_500"
