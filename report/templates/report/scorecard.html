@@ -1,0 +1,115 @@
+{% extends "report/base.html" %}
+{% load static %}
+
+{% block title %}Hospital Scorecard{% endblock %}
+
+{% block content %}
+    <h2>Hospital Scorecard</h2>
+    <p class="subtitle">Generated from your uploaded dataset</p>
+
+    <!-- top KPI cards -->
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <span class="kpi-label">Total Doctors</span>
+            <span class="kpi-value">{{ data.doctor_count.total }}</span>
+        </div>
+        <div class="kpi-card">
+            <span class="kpi-label">Recovery Rate</span>
+            <span class="kpi-value">{{ data.recovery_rate }}%</span>
+        </div>
+        <div class="kpi-card">
+            <span class="kpi-label">Surgical Mortality</span>
+            <span class="kpi-value">{{ data.surgical_mortality_rate }}%</span>
+        </div>
+        <div class="kpi-card">
+            <span class="kpi-label">Critical Survival Rate</span>
+            <span class="kpi-value">{{ data.critical_survival_rate }}%</span>
+        </div>
+        <div class="kpi-card">
+            <span class="kpi-label">Readmission Rate</span>
+            <span class="kpi-value">{{ data.readmission_rate }}%</span>
+        </div>
+        <div class="kpi-card">
+            <span class="kpi-label">Avg Length of Stay</span>
+            <span class="kpi-value">{{ data.avg_length_of_stay }} days</span>
+        </div>
+    </div>
+
+    <!-- doctors by department table -->
+    <h3>Doctors by Department</h3>
+    <table>
+        <tr>
+            <th>Department</th>
+            <th>Count</th>
+        </tr>
+        {% for row in data.doctor_count.by_department %}
+        <tr>
+            <td>{{ row.department }}</td>
+            <td>{{ row.count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- department wise performance -->
+    <h3>Department Performance</h3>
+    <table>
+        <tr>
+            <th>Department</th>
+            <th>Admissions</th>
+            <th>Recovery %</th>
+            <th>Mortality %</th>
+            <th>Avg LOS (days)</th>
+        </tr>
+        {% for row in data.department_performance %}
+        <tr>
+            <td>{{ row.department }}</td>
+            <td>{{ row.total_admissions }}</td>
+            <td>{{ row.recovery_rate_pct }}</td>
+            <td>{{ row.mortality_rate_pct }}</td>
+            <td>{{ row.avg_length_of_stay_days }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- doctor workload table -->
+    <h3>Doctor Workload</h3>
+    <table>
+        <tr>
+            <th>Doctor</th>
+            <th>Department</th>
+            <th>Admissions Handled</th>
+        </tr>
+        {% for row in data.doctor_workload %}
+        <tr>
+            <td>{{ row.name }}</td>
+            <td>{{ row.department }}</td>
+            <td>{{ row.admissions_handled }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- charts, using chart.js -->
+    <h3>Department Admissions</h3>
+    <canvas id="deptChart" height="100"></canvas>
+
+    <h3>Admission Outcomes</h3>
+    <canvas id="admissionOutcomeChart" height="150"></canvas>
+
+    <h3>Surgery Outcomes</h3>
+    <canvas id="surgeryOutcomeChart" height="150"></canvas>
+
+    <br>
+    <a href="{% url 'upload_dataset' %}">Upload a new dataset</a>
+{% endblock %}
+
+{% block extra_js %}
+{{ dept_labels|json_script:"dept-labels" }}
+{{ dept_admissions|json_script:"dept-data" }}
+{{ admission_outcome_labels|json_script:"admission-outcome-labels" }}
+{{ admission_outcome_values|json_script:"admission-outcome-values" }}
+{{ surgery_outcome_labels|json_script:"surgery-outcome-labels" }}
+{{ surgery_outcome_values|json_script:"surgery-outcome-values" }}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{% static 'report/js/scorecard.js' %}"></script>
+{% endblock %}

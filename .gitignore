@@ -1,0 +1,35 @@
+# Environment variables (never commit real credentials)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+
+# Virtual environment
+baggae/
+venv/
+env/
+
+# Django
+db.sqlite3
+db.sqlite3-journal
+*.log
+media/
+
+# Static files (collected in production, don't need to be in git)
+staticfiles/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker (keep Dockerfile/docker-compose.yaml, ignore volumes/overrides if any)
+docker-compose.override.yml

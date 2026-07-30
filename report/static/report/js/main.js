@@ -1,0 +1,1 @@
+console.log("Hospital Scorecard app loaded");

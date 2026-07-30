@@ -1,0 +1,58 @@
+{% extends "report/base.html" %}
+{% load static %}
+
+{% block title %}Upload Dataset{% endblock %}
+
+{% block content %}
+    <h2>Upload Hospital Dataset</h2>
+    <p class="subtitle">Upload your 4 CSV files to generate a KPI scorecard</p>
+
+    {% if success_message %}
+        <p style="color: var(--accent);">{{ success_message }}</p>
+    {% endif %}
+
+    {% if errors %}
+        <div style="color: #e05252; margin-bottom: 1rem;">
+            <strong>Validation failed:</strong>
+            <ul>
+                {% for error in errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    {% if warnings %}
+        <div style="color: #d99a2b; margin-bottom: 1rem;">
+            <strong>Warnings:</strong>
+            <ul>
+                {% for warning in warnings %}
+                    <li>{{ warning }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    {% if summary %}
+        <div style="margin-bottom: 1rem;">
+            <strong>Summary:</strong>
+            <ul>
+                <li>Doctors: {{ summary.doctors_count }}</li>
+                <li>Patients: {{ summary.patients_count }}</li>
+                <li>Admissions: {{ summary.admissions_count }}</li>
+                <li>Surgeries: {{ summary.surgeries_count }}</li>
+            </ul>
+        </div>
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data" id="upload-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" id="analyze-btn">Get Analysis</button>
+        <p id="loading-msg" style="display:none;">Processing your data, please wait...</p>
+    </form>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'report/js/upload.js' %}"></script>
+{% endblock %}

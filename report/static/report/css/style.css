@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    background-color: #141414;
+    color: #e5e5e5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background-color: #000000;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #e50914;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+main {
+    width: 100%;
+    max-width: 420px;
+    padding: 3rem 1rem;
+    flex: 1;
+}
+
+h2 {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+form {
+    width: 100%;
+    background-color: #181818;
+    border-radius: 4px;
+    padding: 2rem 1.5rem;
+}
+
+form p {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+label {
+    color: #b3b3b3;
+    font-size: 0.85rem;
+}
+
+input[type="file"] {
+    background-color: #333333;
+    color: #e5e5e5;
+    border: 1px solid #454545;
+    border-radius: 4px;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #e50914;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    margin-top: 0.7rem;
+}
+
+button:hover {
+    background-color: #f6121d;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #555555;
+}
+
+#loading-msg {
+    text-align: center;
+    color: #b3b3b3;
+    font-size: 0.85rem;
+    margin-top: 0.8rem;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    color: #737373;
+    font-size: 0.75rem;
+}
+
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.kpi-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.kpi-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.3rem;
+}
+
+.kpi-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    font-size: 0.85rem;
+}
+
+th, td {
+    text-align: left;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--card-border);
+}
+
+th {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+main {
+    max-width: 700px !important;
+}
