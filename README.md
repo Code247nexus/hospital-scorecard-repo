@@ -311,5 +311,6 @@ The application is containerized using Docker and deployed on Render with:
 
 **Aditya Jha**
 
-- GitHub: https://github.com/<your-username>
-- LinkedIn: https://linkedin.com/in/<your-profile>
+- GitHub: https://github.com/Code247nexus
+- LinkedIn:https://www.linkedin.com/in/adityajha49
+ - Live Url:https://hospital-scorecard-repo.onrender.com
