@@ -1,10 +1,11 @@
+
 import pandas as pd
 from django.shortcuts import render,redirect
 from .forms import DatasetUploadForm
 from .validators import validate_dataset
 from .models import Doctor, Patient, Admission, Surgery
-from .kpi_queries import get_full_scorecard
 from .kpi_queries import get_full_scorecard, run_query
+
 def upload_dataset(request):
     if request.method == 'POST':
         form = DatasetUploadForm(request.POST, request.FILES)
@@ -129,3 +130,11 @@ def scorecard(request):
         'surgery_outcome_values': [row['count'] for row in surgery_outcomes],
     }
     return render(request, 'report/scorecard.html', context)
+
+
+def custom_404(request, exception):
+    return render(request, "report/404.html", status=404)
+
+
+def custom_500(request):
+    return render(request, "report/500.html", status=500)
